@@ -1,0 +1,23 @@
+{
+  "name": "parenths",
+  "version": "1.0.0",
+  "description": "",
+  "main": "parenths.js",
+  "scripts": {
+    "test": "node *spec.js | faucet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisman/parenths.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisman/parenths/issues"
+  },
+  "homepage": "https://github.com/chrisman/parenths#readme",
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^4.6.0"
+  }
+}
