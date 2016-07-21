@@ -64,3 +64,4 @@ test('it should fail unclosed opens', assert => {
 
   assert.end();
 });
+

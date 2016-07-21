@@ -17,15 +17,6 @@ var is_closer = has(closers);
 var parenths = (line) => {
 
   var chars = line.split('');
-
-  // edge cases
-  if (
-    chars.every(c => is_opener(c))    // all openers
-    || chars.every(c => is_closer(c)) // all closers
-  ) {
-    return false;
-  }
-
   var stack = [];
   var result = true;
 
@@ -39,14 +30,16 @@ var parenths = (line) => {
     }
   });
 
-  return result;
+  return (stack.length) ? false : result;
 }
 
-fs.readFileSync(process.argv[2])
-.toString()
-.split('\n')
-.forEach(line => {
-  console.log(line, parenths(line));
-});
+// comment this block out before running tests
+//fs.readFileSync(process.argv[2])
+//.toString()
+//.split('\n')
+//.filter(line => line !== '')
+//.forEach(line => {
+//  console.log(line, parenths(line));
+//});
 
 module.exports = parenths;
