@@ -33,13 +33,14 @@ var parenths = (line) => {
   return (stack.length) ? false : result;
 }
 
-// comment this block out before running tests
-//fs.readFileSync(process.argv[2])
-//.toString()
-//.split('\n')
-//.filter(line => line !== '')
-//.forEach(line => {
-//  console.log(line, parenths(line));
-//});
+if (process.argv[2]) {
+  fs.readFileSync(process.argv[2])
+  .toString()
+  .split('\n')
+  .filter(line => line !== '')
+  .forEach(line => {
+    console.log(parenths(line));
+  });
+}
 
 module.exports = parenths;
